@@ -1,0 +1,30 @@
+{
+  "name": "ramen-ratings-api",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "fmt": "bunx prettier --write .",
+    "migrate": "bunx drizzle-kit push",
+    "studio": "bunx drizzle-kit studio",
+    "seed": "bunx tsx src/scripts/seed.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.30.2",
+    "prettier": "^2.8.8",
+    "tsx": "^4.19.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/pg": "^8.11.11",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.4",
+    "extract-zip": "^2.0.1",
+    "fast-csv": "^5.0.2",
+    "hono": "^4.6.18",
+    "pg": "^8.13.1"
+  }
+}
