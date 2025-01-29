@@ -5,7 +5,7 @@ import { ramenRouter } from './routes/ramen.router';
 const app = new Hono();
 
 app.get('/', (c) => {
-  return c.text('Welcome to the ramen shop of ratings!');
+  return c.html('<h3><b>Welcome to the ramen shop of ratings!</b></h3>');
 });
 
 // Use app.route() so that everything in ramenRouter is nested under /ramen
@@ -19,3 +19,4 @@ Bun.serve({
 });
 
 console.log('Server running on http://localhost:3000');
+
