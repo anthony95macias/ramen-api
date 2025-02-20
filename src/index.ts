@@ -1,6 +1,8 @@
-// src/index.ts
 import { Hono } from 'hono';
 import { ramenRouter } from './routes/ramen.router';
+
+// Load environment variables
+import 'dotenv/config';
 
 const app = new Hono();
 
@@ -11,12 +13,13 @@ app.get('/', (c) => {
 // Use app.route() so that everything in ramenRouter is nested under /ramen
 app.route('/ramen', ramenRouter);
 
+const PORT = process.env.PORT || 3000; // Default to 3000 if PORT is not set
+
 Bun.serve({
   fetch(req) {
     return app.fetch(req);
   },
-  port: 3000,
+  port: Number(PORT), // Use PORT from .env
 });
 
-console.log('Server running on http://localhost:3000');
-
+console.log(`Server running on http://localhost:${PORT}`);
