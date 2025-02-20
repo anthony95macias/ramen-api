@@ -6,7 +6,7 @@
     "fmt": "bunx prettier --write .",
     "migrate": "bunx drizzle-kit push",
     "studio": "bunx drizzle-kit studio",
-    "seed": "bunx tsx src/scripts/seed.ts"
+    "seed": "bunx tsx src/scripts/seedFromJson.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
